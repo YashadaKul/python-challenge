@@ -80,8 +80,7 @@ with open(PyPoll) as csvfile:
     percent_raymon = percentage(len(votes_Raymon), Total_votes)
     print(percent_raymon)
 
-print(f"Election Results \n, Total Votes: {Total_votes} \n, {List_of_candidates[0]}, {percent_charles}, {len(votes_Charles)} \n, {List_of_candidates[1]}, {percent_diana}, {len(votes_Diana)} \n, {List_of_candidates[2]}, {len(votes_Raymon)}, {percent_raymon}")
-
+print(f"Election Results\n -------------- \n Total Votes: {Total_votes}\n -------------- \n {List_of_candidates[0]}, {percent_charles}, {len(votes_Charles)}\n {List_of_candidates[1]}, {percent_diana}, {len(votes_Diana)}\n {List_of_candidates[2]}, {len(votes_Raymon)}, {percent_raymon}\n -------------- \n Winner: {winner}")
 #Results = print(f"Total months: {month_number}, Total: {total_net_profit}, Average change: {average_change}, Greatest increase in profits: {month_greatest} {greatest_increase}, Greatest decrease in profits: {month_lowest} {greatest_decrease}" )
 
 #export as a txt file
@@ -92,5 +91,5 @@ output_file = os.path.join('Analysis', 'analysis.txt')
 file = open(output_file, "w")
 
 #write to the file
-file.writelines(f"Election Results \n Total Votes: {Total_votes} \n {List_of_candidates[0]}, {percent_charles}, {len(votes_Charles)} \n {List_of_candidates[1]}, {percent_diana}, {len(votes_Diana)} \n {List_of_candidates[2]}, {len(votes_Raymon)}, {percent_raymon}")
+file.writelines(f"Election Results\n -------------- \n Total Votes: {Total_votes}\n -------------- \n {List_of_candidates[0]}, {percent_charles}, {len(votes_Charles)}\n {List_of_candidates[1]}, {percent_diana}, {len(votes_Diana)}\n {List_of_candidates[2]}, {len(votes_Raymon)}, {percent_raymon}\n -------------- \n Winner: {winner}")
     

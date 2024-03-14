@@ -25,7 +25,7 @@ with open(PyBank) as csvfile:
         #Count the number of months. 
         month_number += 1
         #calculate the net profit/loss
-        total_net_profit += int(row[1])
+        total_net_profit += int((row[1]))
         #make lists of date and amount
         Dates.append(row[0])
         Amount.append(row[1])
@@ -39,14 +39,11 @@ with open(PyBank) as csvfile:
     #Populate an object with changes in profit/loss:
     for j in range(0, len(Amount)-1):
         changes.append(Amount[j+1] - Amount[j]) 
-    print(changes)
-    
-    type(changes[1])
     
     #Calculate the average change:
     for k in changes:
         sum_changes = sum_changes + k
-        print(sum_changes)
+
     average_change = sum_changes/(len(Amount)- 1)
     
     print(f"Average change: {average_change}")
@@ -67,7 +64,7 @@ with open(PyBank) as csvfile:
 
 
     #Printing results:
-    Results = print(f"Total months: {month_number}, Total: {total_net_profit}, Average change: {average_change}, Greatest increase in profits: {month_greatest} {greatest_increase}, Greatest decrease in profits: {month_lowest} {greatest_decrease}" )
+    Results = print(f"Financial Analysis \n -------------- \n Total months: {month_number} \n\n Total: {total_net_profit} \n\n Average change: {average_change} \n\n Greatest increase in profits: {month_greatest} {greatest_increase} \n\n Greatest decrease in profits: {month_lowest} {greatest_decrease}")
     
 
 #export as a txt file
@@ -78,7 +75,7 @@ output_file = os.path.join('Analysis', 'analysis.txt')
 file = open(output_file, "w")
 
 #write to the file
-file.writelines(f"Total months: {month_number}, Total: {total_net_profit}, Average change: {average_change}, Greatest increase in profits: {month_greatest} {greatest_increase}, Greatest decrease in profits: {month_lowest} {greatest_decrease}")
+file.writelines(f"Financial Analysis \n -------------- \n Total months: {month_number} \n\n Total: {total_net_profit} \n\n Average change: {average_change} \n\n Greatest increase in profits: {month_greatest} {greatest_increase} \n\n Greatest decrease in profits: {month_lowest} {greatest_decrease}")
     
     
 
